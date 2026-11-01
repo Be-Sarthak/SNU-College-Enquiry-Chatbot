@@ -25,7 +25,7 @@ college = {
 
 faq = {
 
-    "location": 
+    "located": 
     "Sister Nivedita University is located at DG 1/2, New Town, Action Area 1, Kolkata - 700156.",
 
     "website":
