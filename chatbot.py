@@ -19,7 +19,33 @@ college = {
     "email": "info@snuniv.ac.in",
     "website": "https://www.snuniv.ac.in/"
 }
+# ==========================================
+# SNU FAQ KNOWLEDGE BASE
+# ==========================================
 
+faq = {
+
+    "location": 
+    "Sister Nivedita University is located at DG 1/2, New Town, Action Area 1, Kolkata - 700156.",
+
+    "website":
+    "Official website: https://www.snuniv.ac.in/",
+
+    "email":
+    "SNU email: info@snuniv.ac.in",
+
+    "engineering":
+    "SNU offers Engineering programs including B.Tech courses.",
+
+    "btech":
+    "B.Tech at SNU is a 4-year undergraduate engineering program.",
+
+    "admission":
+    "Admission process: Register on the admission portal, fill the application form, pay the application fee and submit your application.",
+
+    "timing":
+    "SNU helpline timing is 10 AM to 6 PM."
+}
 # 2. Helpline information
 
 helpline = {
