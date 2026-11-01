@@ -1,5 +1,7 @@
 import os
 from google import genai
+# Unknown question
+import time
 
 client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
 
@@ -178,18 +180,24 @@ def get_response(question):
 
         return "You're welcome! Have a great day!"
 
-    
-   # Unknown question
+    # Unknown question
     else:
-        try:
-            response = client.models.generate_content(
-                model="gemini-3.8-flash",
-                contents=question
-            )
-            return response.text
+        for _ in range(3):
+            try:
+                response = client.models.generate_content(
+                    model="gemini-3.8-flash",
+                    contents=question
+                )
+                return response.text
 
-        except Exception as e:
-            return f"AI Error: {e}"
+            except Exception:
+                time.sleep(2)
+
+        return "Gemini AI is busy. Please try again in a few seconds."
+
+    
+   
+
 
 # 7. Main function to run chatbot
 
