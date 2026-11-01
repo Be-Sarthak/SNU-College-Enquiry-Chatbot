@@ -1,3 +1,8 @@
+import os
+from google import genai
+
+client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+
 
 # ==========================================
 # SISTER NIVEDITA UNIVERSITY CHATBOT
@@ -173,14 +178,18 @@ def get_response(question):
 
         return "You're welcome! Have a great day!"
 
-    # Unknown question
+    
+   # Unknown question
     else:
-        return (
-            "Sorry, I couldn't understand your question.\n"
-            "Please ask me about courses, fees, admission, "
-            "college information or contact details."
-        )
+        try:
+            response = client.models.generate_content(
+                model="gemini-2.5-flash",
+                contents=question
+            )
+            return response.text
 
+        except Exception as e:
+            return f"AI Error: {e}"
 
 # 7. Main function to run chatbot
 
