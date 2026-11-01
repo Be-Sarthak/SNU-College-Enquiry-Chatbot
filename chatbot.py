@@ -132,6 +132,11 @@ def get_response(question):
 
     question = question.lower().strip()
 
+    # FAQ Knowledge Base Check
+    for key, answer in faq.items():
+        if key in question:
+            return answer
+
     # College information
     if any(word in question for word in
        ["about snu", "about college",
