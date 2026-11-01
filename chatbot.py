@@ -211,14 +211,22 @@ def get_response(question):
 
         return "You're welcome! Have a great day!"
 
-    # Unknown question
+        # Unknown question
     else:
         for _ in range(3):
             try:
                 response = client.models.generate_content(
-                    model="gemini-2.5-flash-lite",
-                    contents=question
+                    model="gemini-3.8-flash",
+                    contents=f"""
+You are an AI assistant for Sister Nivedita University.
+
+Answer the student's question clearly and briefly.
+
+Student Question:
+{question}
+"""
                 )
+
                 return response.text
 
             except Exception:
