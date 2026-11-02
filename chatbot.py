@@ -240,9 +240,6 @@ Student Question:
 
         return "Gemini AI is busy. Please try again in a few seconds."
 
-    
-   
-
 
 # 7. Main function to run chatbot
 
@@ -261,7 +258,7 @@ def start_chatbot():
         answer = get_response(user_question)
 
         print("\nChatbot:", answer)
-#hii
+
 
 # 8. Start the chatbot
 
