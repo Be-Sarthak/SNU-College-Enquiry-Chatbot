@@ -1,9 +1,15 @@
 import os
-from google import genai
-# Unknown question
 import time
+from google import genai
+import streamlit as st
 
-client = genai.Client(api_key=os.getenv("GEMINI_API_KEY"))
+# Streamlit secrets ya environment variable se API key secure tarike se lena
+try:
+    api_key = st.secrets.get("GEMINI_API_KEY") or os.getenv("GEMINI_API_KEY")
+except Exception:
+    api_key = os.getenv("GEMINI_API_KEY")
+
+client = genai.Client(api_key=api_key)
 
 
 # ==========================================
