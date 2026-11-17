@@ -235,11 +235,11 @@ Student Question:
 
                 return response.text
 
-            except Exception:
-                time.sleep(2)
+            except Exception as e:
+    print("Gemini API Error:", repr(e))
+    time.sleep(2)
 
-        return "Gemini AI is busy. Please try again in a few seconds."
-
+return "Sorry, the AI service is temporarily unavailable. Please try again."
 
 # 7. Main function to run chatbot
 
