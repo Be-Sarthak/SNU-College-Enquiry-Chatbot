@@ -1,5 +1,5 @@
 import streamlit as st
-from chatbot import get_response
+import chatbot from get_response
 
 # Page Config
 st.set_page_config(
